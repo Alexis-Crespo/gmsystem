@@ -1,10 +1,5 @@
-"use client";
-import "./login.css";
-
-import { LoginBox } from "./../components/LoginBox";
-// Crear contexto con los usuarios.
-
-// const AppContext = createContext();
+import { RegisterBox } from "./../../components/RegisterBox";
+import "./../login.css";
 
 export default function Login() {
   return (
@@ -19,7 +14,7 @@ export default function Login() {
         </svg>
       </div>
 
-      <LoginBox />
+      <RegisterBox />
 
       <div className="w-full  absolute bottom-0">
         <div className="bg-[#f4521b] h-[30px] w-[30px] rounded-full ml-60 -mb-2 2xl:h-[60px] 2xl:w-[60px]">
