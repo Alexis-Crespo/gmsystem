@@ -6,23 +6,14 @@ export const FormAdd = ({ dataAuth, setIsAdd, setCentralUser }) => {
   console.log("A VER EL FORM ADD ID? : ", dataAuth._id);
   const [addUser, setAddUser] = useState({
     doc: "",
-    du: false,
-    pa: false,
+    du: true,
     usuario: "",
     pass: "",
-    tarjetas: false,
-    visa: false,
-    mastercard: false,
-    amex: false,
-    ca: false,
-    cc: false,
-    usd: false,
-    afip: "",
-    homologacion: false,
-    desarrollo: false,
-    cliente: true,
+    cuentas: [],
     publico: true,
     creador: dataAuth._id,
+    traeData: false,
+    logeado: false
   });
 
   const onHandlerChange = (e) => {
@@ -57,24 +48,7 @@ export const FormAdd = ({ dataAuth, setIsAdd, setCentralUser }) => {
       <div className="login-box py-2 px-8 -mt-5">
         <form onSubmit={onHandlerSubmit}>
           <h2 className="">Credenciales (*)</h2>
-          <div className="-mt-2 mb-4">
-            <label className="text-white mr-1 ">DU</label>
-            <input onChange={onHandlerChange} type="checkbox" name="du" />
-            <label className="text-white mr-1 ml-2">PA</label>
-            <input onChange={onHandlerChange} type="checkbox" name="pa" />
-            <label className="text-white mr-1 ml-8">HOMO</label>
-            <input
-              onChange={onHandlerChange}
-              type="checkbox"
-              name="homologacion"
-            />
-            <label className="text-white mr-1 ml-1">DESA</label>
-            <input
-              onChange={onHandlerChange}
-              type="checkbox"
-              name="desarrollo"
-            />
-          </div>
+
 
           <div className="user-box">
             <input onChange={onHandlerChange} type="text" name="doc" required />
@@ -99,43 +73,9 @@ export const FormAdd = ({ dataAuth, setIsAdd, setCentralUser }) => {
             <label>Password</label>
           </div>
 
-          <h3 className="mt-2 mb-4 text-white">Data (Opcional) </h3>
-          <div className="user-box">
-            <label className="-mt-4">AFIP</label>
-            <select
-              className="mt-6 mb-2 "
-              onChange={onHandlerChange}
-              name="afip"
-            >
-              <option value="M">Monotributista</option>
-              <option value="A">Autónomo</option>
-            </select>
-          </div>
-          <div className="mt-2">
-            <label className="text-white mr-1">Tarjetas</label>
-            <input
-              onChange={onHandlerChange}
-              type="checkbox"
-              name="tarjetas"
-              value="true"
-            />
-            <label className="text-white ml-2 mr-1">Cliente</label>
-            <input
-              onChange={onHandlerChange}
-              type="checkbox"
-              name="password"
-              value="true"
-              defaultChecked
-            />
-            <label className="text-white ml-2 mr-1">Publico</label>
-            <input
-              onChange={onHandlerChange}
-              type="checkbox"
-              name="public"
-              value="true"
-              defaultChecked
-            />
-          </div>
+
+
+
           <div className="w-full flex justify-center  ">
             <button>
               <span></span>

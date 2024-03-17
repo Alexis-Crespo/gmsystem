@@ -26,16 +26,16 @@ export const TableCentral = ({ data, setData, setCentralUser }) => {
 
   return (
     <Table className="">
-      <TableHeader className="bg-[#f4521b] opacity-75 font-bold text-lg text-white">
+      <TableHeader className="bg-[#f4521b]  opacity-75 font-bold text-lg text-white">
         <TableRow>
           <TableHead>Documento</TableHead>
           <TableHead>Usuario</TableHead>
-          <TableHead>Contraseña</TableHead>
-          <TableHead>Ambiente</TableHead>
-          <TableHead className="relative -left-12">Acciones</TableHead>
+          <TableHead>Pass</TableHead>
+
+          <TableHead className="relative ">Acciones</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <TableBody className="bg-[#2c2c2b]  text-white">
         {data.map((user) => {
           const { _id } = user;
 
@@ -43,12 +43,10 @@ export const TableCentral = ({ data, setData, setCentralUser }) => {
             <TableRow>
               <TableCell>{user.doc}</TableCell>
               <TableCell>{user.usuario}</TableCell>
-              <TableCell>{user.pass}</TableCell>
+              <TableCell >{user.pass}</TableCell>
+
               <TableCell>
-                {user.homologacion ? "Homologacion" : "Desarrollo"}
-              </TableCell>
-              <TableCell>
-                <div className="flex -ml-9">
+                <div className="flex ml-5">
                   <FaRegTrashAlt
                     id={_id}
                     onClick={onDelete}
